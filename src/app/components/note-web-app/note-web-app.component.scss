@@ -1,0 +1,33 @@
+.menu{
+    zoom: 2 !important;
+}
+
+.share{
+    zoom: 2 !important;
+}
+
+.card{
+    height: 100%;
+    width: 7%;
+}
+
+.share-info{
+    position: absolute;
+    bottom: 0;
+    width: 7%;
+    border-style: groove;
+}
+
+.menu-solution{
+    height: 5rem;
+    // border-style: groove;s
+    &:hover {
+        background-color: yellow;
+        transition: 0.4s;
+    }
+}
+
+// .bottom{
+//     position: fixed;
+//     bottom: 0;
+// }
