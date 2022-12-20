@@ -1,22 +1,23 @@
-.menu {
-    zoom: 2 !important;
-}
+// .menu {
+//     zoom: 2 !important;
+// }
 
-.share {
-    zoom: 2 !important;
-}
+// .share {
+//     zoom: 2 !important;
+// }
 
 .card {
     height: 100%;
-    width: 7%;
+    width: 7rem;
     border-right-style: groove;
 }
 
 .share-info {
     position: absolute;
     bottom: 0;
-    width: 7%;
-    height: 5rem;
+    height: 6.7rem;
+    width: 7rem;
+    border-right-style:groove ;
     &:hover {
         background-color: yellow;
         transition: 0.4s;
@@ -25,7 +26,7 @@
 }
 
 .menu-solution {
-    height: 5rem;
+    height: 6.75rem;
     border-bottom-style: groove;
     // border-style: groove;
     &:hover {
@@ -40,7 +41,18 @@
 
 .container {
     margin: auto;
+    width: 46%;
 }
+
+.editor{
+    position: absolute;
+    top: 0;
+    width: 950px;
+}
+
+// .underfine{
+//     display: none;
+// }
 
 // .bottom{
 //     position: fixed;

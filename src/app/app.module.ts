@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoteWebAppComponent } from './components/note-web-app/note-web-app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import {EditorModule} from 'primeng/editor';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {MatIconModule} from '@angular/material/icon'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    EditorModule
 
   ],
   providers: [],
