@@ -58,20 +58,19 @@
             </ul>
         </div>
         <div class="bottom">
-        <div class="share-info">
-            <ul>
-                <li>
-                    <mat-icon class="icon share">share</mat-icon>
-                </li>
-            </ul>
-        </div>
+            <div class="share-info">
+                <ul>
+                    <li>
+                        <mat-icon class="icon share">share</mat-icon>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
-   <div class="container">
-        <p-editor class="editor" [style]="{'height':'320px', 'wight':'320px'}" [(ngModel)]='message'></p-editor>
-        <div class="valuePre">valuePre: {{dataNote}}</div>
-    </div> 
+    <div class="container">
+        <textarea class="note" pInputTextarea [autoResize]="true" placeholder="TextNote...." [(ngModel)]="message">{{message}}</textarea>
+    </div>
 </div>
 
 <app-child-change [message]="message"></app-child-change>

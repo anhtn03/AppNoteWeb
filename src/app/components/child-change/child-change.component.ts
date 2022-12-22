@@ -1,4 +1,10 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
+
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -20,10 +26,7 @@ export class ChildChangeComponent implements OnChanges {
     console.log(changes)
     console.log(this.message)
     if(!!changes) {
-      let data = this.message.replace("<p>", "").replace("</p>","")
-      if(this.message == null) {
-      this.cokki.set("dataNote",data, 214)
-      }
+      this.cokki.set("dataNote",this.message, 214)
     }
   }
  

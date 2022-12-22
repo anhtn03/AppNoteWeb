@@ -1,6 +1,6 @@
 .card {
     height: 100%;
-    width: 7rem;
+    width: 7.6%;
     border-right-style: groove;
 }
 
@@ -8,8 +8,8 @@
     position: absolute;
     bottom: 0;
     height: 6.7rem;
-    width: 7rem;
-    border-right-style:groove ;
+    width: 7.6%;
+    border-right-style: groove;
     &:hover {
         background-color: yellow;
         transition: 0.4s;
@@ -29,17 +29,12 @@
     display: flex;
 }
 
+.note {
+    padding-top: 0;
+    width: 700px;
+    margin-left: 18rem;
+}
+
 .container {
-    margin: auto;
-    width: 46%;
-}
-
-.editor{
-    position: absolute;
-    top: 0;
-    width: 950px;
-}
-
-.valuePre{
-    margin-left: -70px;
+    width: 92.4%;
 }
