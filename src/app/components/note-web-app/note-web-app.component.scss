@@ -1,11 +1,3 @@
-// .menu {
-//     zoom: 2 !important;
-// }
-
-// .share {
-//     zoom: 2 !important;
-// }
-
 .card {
     height: 100%;
     width: 7rem;
@@ -22,13 +14,11 @@
         background-color: yellow;
         transition: 0.4s;
     }
-    // border-style: groove;
 }
 
 .menu-solution {
     height: 6.75rem;
     border-bottom-style: groove;
-    // border-style: groove;
     &:hover {
         background-color: yellow;
         transition: 0.4s;
@@ -50,11 +40,6 @@
     width: 950px;
 }
 
-// .underfine{
-//     display: none;
-// }
-
-// .bottom{
-//     position: fixed;
-//     bottom: 0;
-// }
+.valuePre{
+    margin-left: -70px;
+}

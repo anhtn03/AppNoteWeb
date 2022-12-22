@@ -69,6 +69,9 @@
     </div>
 
    <div class="container">
-        <p-editor class="editor" formControlName="description" [style]="{'height':'320px', 'wight':'320px'}"></p-editor>
+        <p-editor class="editor" [style]="{'height':'320px', 'wight':'320px'}" [(ngModel)]='message'></p-editor>
+        <div class="valuePre">valuePre: {{dataNote}}</div>
     </div> 
 </div>
+
+<app-child-change [message]="message"></app-child-change>
