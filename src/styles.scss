@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+    // background-image: url();
 }
 
 body {
@@ -16,12 +17,12 @@ ul {
     padding: 0;
 }
 
-li{
+li {
     cursor: pointer;
     height: 70px;
     width: 70px;
-    border-bottom: 1px solid #A2A2A2;
-    &:hover{
+    // border-bottom: 1px solid #A2A2A2;
+    &:hover {
         background-color: green;
     }
 }

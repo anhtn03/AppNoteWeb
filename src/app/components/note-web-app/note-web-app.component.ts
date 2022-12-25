@@ -13,7 +13,11 @@ import { CookieService } from 'ngx-cookie-service';
 export class NoteWebAppComponent implements OnInit{
   constructor(private readonly cokki: CookieService){}
   message = '';
-  dataNote ='';
+  dataNote = '';
+  isshowul = true;
+  isshowulone = false;
+  isshowultwo = true;
+  iseditting = true;
 
   ngOnInit(): void {
     let valuePrv = this.cokki.get("dataNote")
@@ -21,5 +25,23 @@ export class NoteWebAppComponent implements OnInit{
     this.dataNote = valuePrv
   }
 
+  toggle() {
+    this.isshowul = !this.isshowul
+    this.isshowulone = !this.isshowulone
+  }
+
+  toggleone() {
+    this.isshowul = !this.isshowul
+    this.isshowulone = !this.isshowulone
+  }
+
+  show() {
+    this.isshowultwo = !this.isshowultwo
+  }
+
+  editting() {
+    this.iseditting = !this.iseditting
+  }
+  
 }
  
