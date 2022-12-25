@@ -1,32 +1,23 @@
-.card {
-    height: 100%;
-    width: 7.6%;
-    border-right-style: groove;
-}
 
 .share-info {
-    position: absolute;
-    bottom: 0;
-    height: 6.7rem;
-    width: 7.6%;
-    border-right-style: groove;
-    &:hover {
-        background-color: yellow;
-        transition: 0.4s;
-    }
 }
 
 .menu-solution {
-    height: 6.75rem;
-    border-bottom-style: groove;
-    &:hover {
-        background-color: yellow;
-        transition: 0.4s;
-    }
+    border-right: 1px solid #A2A2A2;
+    position: absolute;
+    height: 100%;
 }
 
-.main {
-    display: flex;
+.hidle{}
+
+.icon{
+    width: 100%;
+    padding: 23px 22px
+}
+
+.bottom{
+    bottom: 0;
+    position: fixed;
 }
 
 .note {
@@ -35,6 +26,6 @@
     margin-left: 18rem;
 }
 
-.container {
-    width: 92.4%;
+.inline{
+    border-top: 1px solid #A2A2A2;
 }

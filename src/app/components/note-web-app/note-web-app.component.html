@@ -1,65 +1,36 @@
 <div class="main">
-
-    <div class="card">
-        <div class="menu-solution">
+    <div class="menu-solution">
+        <div class="top">
             <ul>
                 <li>
-                    <mat-icon class="icon menu">menu</mat-icon>
+                    <mat-icon class="icon menu master">menu</mat-icon>
                 </li>
-            </ul>
-        </div>
-        <div class="underfine menu-solution">
-            <ul>
                 <li>
-                    <mat-icon class="icon menu">remove_red_eye</mat-icon>
+                    <mat-icon class="icon menu underfine">menu</mat-icon>
                 </li>
-            </ul>
-        </div>
-        <div class="underfine menu-solution">
-            <ul>
                 <li>
-                    <mat-icon class="icon menu">remove_red_eye</mat-icon>
+                    <mat-icon class="icon menu underfine">menu</mat-icon>
                 </li>
-            </ul>
-        </div>
-        <div class="underfine menu-solution">
-            <ul>
                 <li>
-                    <mat-icon class="icon menu">remove_red_eye</mat-icon>
-                </li>
-            </ul>
-        </div>
-        <div class="underfine menu-solution">
-            <ul>
-                <li>
-                    <mat-icon class="icon menu">remove_red_eye</mat-icon>
-                </li>
-            </ul>
-        </div>
-        <div class="underfine menu-solution">
-            <ul>
-                <li>
-                    <mat-icon class="icon menu">remove_red_eye</mat-icon>
-                </li>
-            </ul>
-        </div>
-        <div class="underfine menu-solution">
-            <ul>
-                <li>
-                    <mat-icon class="icon menu">remove_red_eye</mat-icon>
-                </li>
-            </ul>
-        </div>
-        <div class="underfine menu-solution">
-            <ul>
-                <li>
-                    <mat-icon class="icon menu">remove_red_eye</mat-icon>
+                    <mat-icon class="icon menu underfine">menu</mat-icon>
                 </li>
             </ul>
         </div>
         <div class="bottom">
             <div class="share-info">
                 <ul>
+                    <li class="inline">
+                        <mat-icon class="icon share">share</mat-icon>
+                    </li>
+                    <li>
+                        <mat-icon class="icon share">share</mat-icon>
+                    </li>
+                    <li>
+                        <mat-icon class="icon share">share</mat-icon>
+                    </li>
+                    <li>
+                        <mat-icon class="icon share">share</mat-icon>
+                    </li>
                     <li>
                         <mat-icon class="icon share">share</mat-icon>
                     </li>
@@ -72,5 +43,4 @@
         <textarea class="note" pInputTextarea [autoResize]="true" placeholder="TextNote...." [(ngModel)]="message">{{message}}</textarea>
     </div>
 </div>
-
 <app-child-change [message]="message"></app-child-change>
