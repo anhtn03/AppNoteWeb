@@ -29,6 +29,8 @@ import {
 } from './components/shared/dialogs/dialogs.component';
 import { DialogDownloadComponent } from './components/shared/dialog-download/dialog-download.component';
 import { HighlighterPipe } from './pipe/highlighter.pipe';
+import { FileSaverModule } from 'ngx-filesaver';
+import { LoginUserComponent } from './components/login-user/login-user.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { HighlighterPipe } from './pipe/highlighter.pipe';
     ChildChangeComponent,
     DialogsComponent,
     DialogDownloadComponent,
-    HighlighterPipe
+    HighlighterPipe,
+    LoginUserComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { HighlighterPipe } from './pipe/highlighter.pipe';
     FormsModule,
     InputTextareaModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    FileSaverModule
 
   ],
   providers: [CookieService, ConfirmDialogModule, ConfirmationService, MessageService, DialogsComponent],

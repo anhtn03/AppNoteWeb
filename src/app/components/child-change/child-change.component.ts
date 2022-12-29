@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 
 import { CookieService } from 'ngx-cookie-service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-child-change',
