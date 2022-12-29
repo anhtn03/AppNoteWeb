@@ -17,54 +17,63 @@
                     </button>
                 </li>
                 <li class="underfine">
-                    <button class="toggle">
-                        <mat-icon class="icon menu" (click)="editting()">create</mat-icon>
+                    <button class="toggle" (click)="editting()">
+                        <mat-icon class="icon menu">create</mat-icon>
                     </button>
                 </li>
                 <li class="underfine">
-                    <button class="toggle">
+                    <p-toast></p-toast>
+                    <p-confirmDialog [style]="{width: '35vw'}" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+                    <button class="toggle" (click)="deleteAll()">
                         <mat-icon class="icon menu ">delete_sweep</mat-icon>
                     </button>
                 </li>
-                <li class="underfine">
-                    <button class="toggle">
-                        <mat-icon class="icon menu ">rate_review</mat-icon>
+                <li class="underfine ">
+                    <button class="toggle" (click)="search()">
+                        <mat-icon class="icon menu ">search</mat-icon>
                     </button>
                 </li>
-                <li class="underfine">
-                    <button class="toggle">
-                        <mat-icon class="icon menu ">cloud_download</mat-icon>
+                <li class="underfine ">
+                    <button class="toggle" (click)="download()">
+                        <mat-icon class="icon menu">cloud_download</mat-icon>
                     </button>
                 </li>
             </ul>
         </div>
-        <div class="bottom">
-            <div class="share-info">
-                <ul [hidden]="isshowultwo">
-                    <li class="inline">
-                        <mat-icon class="icon share">facebook</mat-icon>
+        <div class="bottom ">
+            <div class="share-info ">
+                <ul [hidden]="isshowultwo ">
+                    <li class="inline ">
+                        <button class="toggle " (click)="opentabfb() ">
+                            <mat-icon class="icon share ">facebook</mat-icon>
+                        </button>
                     </li>
-                    <li class="inline">
-                        <mat-icon class="icon share">call</mat-icon>
+                    <li class="inline ">
+                        <button class="toggle " (click)="opentabig() ">
+                        <mat-icon class="icon share ">call</mat-icon>
+                        </button>
                     </li>
                 </ul>
             </div>
-            <div class="default2">
-                <ul class="inline">
+            <div class="default2 ">
+                <ul class="inline ">
                     <li>
-                        <button class="toggle" (click)="show()">
-                            <mat-icon class="menu master">share</mat-icon>
+                        <button class="toggle " (click)="show() ">
+                            <mat-icon class="menu master ">share</mat-icon>
                         </button>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+    <!-- 
+    <div class="rightSolution">
+        <input type="text">
+    </div> -->
 
-    <div class="container">
-        <textarea [disabled]="iseditting" class="note" pInputTextarea [autoResize]="true" placeholder="TextNote...." [(ngModel)]="message">{{message}}</textarea>
+    <div class="container ">
+        <textarea [disabled]="iseditting " class="note " pInputTextarea [autoResize]="true " placeholder="TextNote.... " [(ngModel)]="message ">{{message}}</textarea>
     </div>
 </div>
 
-
-<app-child-change [message]="message"></app-child-change>
+<app-child-change [message]="message "></app-child-change>
