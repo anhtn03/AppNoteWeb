@@ -31,6 +31,8 @@ import { DialogDownloadComponent } from './components/shared/dialog-download/dia
 import { HighlighterPipe } from './pipe/highlighter.pipe';
 import { FileSaverModule } from 'ngx-filesaver';
 import { LoginUserComponent } from './components/login-user/login-user.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,10 +53,11 @@ import { LoginUserComponent } from './components/login-user/login-user.component
     InputTextareaModule,
     ConfirmDialogModule,
     ToastModule,
-    FileSaverModule
+    FileSaverModule,
+    HttpClientModule
 
   ],
-  providers: [CookieService, ConfirmDialogModule, ConfirmationService, MessageService, DialogsComponent],
+  providers: [CookieService, ConfirmDialogModule, ConfirmationService, MessageService, DialogsComponent, HttpClient],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

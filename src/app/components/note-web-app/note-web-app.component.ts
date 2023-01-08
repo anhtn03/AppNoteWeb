@@ -6,7 +6,8 @@ import {
 
 import { CookieService } from 'ngx-cookie-service';
 import { FileSaverService } from 'ngx-filesaver';
-import { BehaviorSubject } from 'rxjs';
+import { Event } from 'src/app/models/event.model';
+import { EventService } from 'src/app/services/event.service';
 
 import { DialogsComponent } from '../shared/dialogs/dialogs.component';
 
@@ -16,15 +17,17 @@ import { DialogsComponent } from '../shared/dialogs/dialogs.component';
   styleUrls: ['./note-web-app.component.scss']
 })
 export class NoteWebAppComponent implements OnInit{
+
+  message: string
   constructor(private readonly cokki: CookieService,
               private readonly dialog: DialogsComponent,
-              private readonly fileSaverService: FileSaverService
+              private readonly fileSaverService: FileSaverService,
+              private readonly EventService: EventService
      ) { }
 
-  
+  id: 1
   urlfb = 'https://www.facebook.com/profile.php?id=100005897110987&mibextid=LQQJ4d';
   urlig = 'https://www.instagram.com/ntanh_03/';
-  message = '';
   isshowul = true;
   isshowulone = false;
   isshowultwo = true;
@@ -33,6 +36,10 @@ export class NoteWebAppComponent implements OnInit{
   ngOnInit(): void {
     let valuePrv = this.cokki.get("dataNote")
     this.message = valuePrv
+    this.EventService.getEvent(this.id).subscribe(
+      (response) => {this.message = response},
+      (error) => {console.log(error)}
+    )
   }
 
   toggle() {
