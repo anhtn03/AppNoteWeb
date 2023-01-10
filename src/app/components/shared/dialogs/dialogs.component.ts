@@ -14,7 +14,9 @@ import {
 export class DialogsComponent {
 
   public isAccept: any
-  constructor(private readonly confirmDialog: ConfirmationService, private readonly messageDialog: MessageService,private readonly cokki: CookieService) {
+  constructor(private readonly confirmDialog: ConfirmationService,
+              private readonly messageDialog: MessageService,
+              private readonly cokki: CookieService) {
 
   }
 

@@ -1,13 +1,12 @@
 import {
   Component,
+  DoCheck,
   Input,
   OnChanges,
-  OnDestroy,
   SimpleChanges,
 } from '@angular/core';
 
 import { CookieService } from 'ngx-cookie-service';
-import { Event } from 'src/app/models/event.model';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
@@ -15,28 +14,15 @@ import { EventService } from 'src/app/services/event.service';
   templateUrl: './child-change.component.html',
   styleUrls: ['./child-change.component.scss']
 })
-export class ChildChangeComponent implements OnChanges, OnDestroy {
+export class ChildChangeComponent implements OnChanges, DoCheck {
  
-  dataSource: Event;
-  id: 1
-  name: "asda"
+  id: number
+  oldMessage: string
   
   @Input() message!: string;
 
-  constructor(private readonly cokki: CookieService, private readonly eventService: EventService) {}
-
-
-  ngOnDestroy(): void {
-    this.eventService.updateEvent({
-      id: this.id,
-      messager: this.message,
-      name: this.name
-    })
-  }
-  // ngOnInit(): void {
-  //   let previousValue = (sessionStorage["dataNote"])
-
-  // }
+  constructor(private readonly cokki: CookieService,
+              private readonly eventService: EventService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes)
@@ -45,5 +31,11 @@ export class ChildChangeComponent implements OnChanges, OnDestroy {
       this.cokki.set("dataNote",this.message, 214)
     }
   }
+
+  ngDoCheck(): void {
+    if(this.oldMessage !== this.message) {
+      this.eventService.updateEvent(this.id)}
+  }
+
  
 }

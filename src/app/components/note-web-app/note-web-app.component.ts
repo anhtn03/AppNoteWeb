@@ -1,12 +1,11 @@
 import {
   Component,
-  Input,
   OnInit,
 } from '@angular/core';
 
 import { CookieService } from 'ngx-cookie-service';
 import { FileSaverService } from 'ngx-filesaver';
-import { Event } from 'src/app/models/event.model';
+import { LinkInfoMyself } from 'src/app/common/constants';
 import { EventService } from 'src/app/services/event.service';
 
 import { DialogsComponent } from '../shared/dialogs/dialogs.component';
@@ -19,26 +18,29 @@ import { DialogsComponent } from '../shared/dialogs/dialogs.component';
 export class NoteWebAppComponent implements OnInit{
 
   message: string
-  constructor(private readonly cokki: CookieService,
-              private readonly dialog: DialogsComponent,
-              private readonly fileSaverService: FileSaverService,
-              private readonly EventService: EventService
-     ) { }
-
+  name: "Tuananh"
   id: 1
-  urlfb = 'https://www.facebook.com/profile.php?id=100005897110987&mibextid=LQQJ4d';
-  urlig = 'https://www.instagram.com/ntanh_03/';
   isshowul = true;
   isshowulone = false;
   isshowultwo = true;
   iseditting = true;
+  
+  
+  constructor(private readonly cokki: CookieService,
+              private readonly dialog: DialogsComponent,
+              private readonly fileSaverService: FileSaverService,
+              private readonly eventService: EventService
+     ) { }
 
   ngOnInit(): void {
     let valuePrv = this.cokki.get("dataNote")
     this.message = valuePrv
-    this.EventService.getEvent(this.id).subscribe(
-      (response) => {this.message = response},
-      (error) => {console.log(error)}
+    this.eventService.getEvent({
+      id: this.id,
+      name: this.name,
+    }).subscribe(
+      (response) => { this.message = response.message},
+      (error) => { console.log(error) }
     )
   }
 
@@ -64,11 +66,11 @@ export class NoteWebAppComponent implements OnInit{
   }
 
   opentabfb() {
-    window.open(this.urlfb,"_blank")
+    window.open(LinkInfoMyself.FaceBook,"_blank")
   }
 
   opentabig() {
-    window.open(this.urlig, "_blank")
+    window.open(LinkInfoMyself.Instagram, "_blank")
   }
 
   deleteAll() {

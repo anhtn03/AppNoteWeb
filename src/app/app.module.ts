@@ -33,6 +33,7 @@ import { FileSaverModule } from 'ngx-filesaver';
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { UserManagerComponent } from './components/user-manager/user-manager.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     DialogsComponent,
     DialogDownloadComponent,
     HighlighterPipe,
-    LoginUserComponent
+    LoginUserComponent,
+    UserManagerComponent
   ],
   imports: [
     BrowserModule,
