@@ -9,7 +9,7 @@ import { GetEventReq } from '../models/dtos/get-event-req';
 })
 export class EventService {
 
-  private readonly eventApi: string
+  private eventApi: string
 
 
   constructor(private readonly httpClient: HttpClient) {

@@ -1,0 +1,32 @@
+.container{
+    position: absolute;
+    top: 15%;
+    left: 47%;
+    margin-top: -50px;
+    margin-left: -40px;
+}
+
+.logo{
+    margin-left: 40px;
+}
+
+.form{
+    margin-left: -1rem;
+}
+
+.form-floating{
+    padding-bottom: 10px;
+}
+
+.form-control{
+    height: 40px;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.btn{
+    padding-right: 8rem;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer; 
+}

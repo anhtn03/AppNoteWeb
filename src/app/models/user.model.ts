@@ -1,3 +1,5 @@
+import { Role } from "../common/constants";
+
 export class User {
     id: number;
 
@@ -5,5 +7,5 @@ export class User {
 
     password: string;
 
-    role: number
+    role: Role
 }

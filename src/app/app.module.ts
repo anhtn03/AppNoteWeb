@@ -2,12 +2,12 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   NgModule,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CookieService } from 'ngx-cookie-service';
+import { CookieModule } from 'ngx-cookie';
 import {
   ConfirmationService,
   MessageService,
@@ -56,10 +56,12 @@ import { UserManagerComponent } from './components/user-manager/user-manager.com
     ConfirmDialogModule,
     ToastModule,
     FileSaverModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    CookieModule.forRoot(),
 
   ],
-  providers: [CookieService, ConfirmDialogModule, ConfirmationService, MessageService, DialogsComponent, HttpClient],
+  providers: [ConfirmDialogModule, ConfirmationService, MessageService, DialogsComponent, HttpClient],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

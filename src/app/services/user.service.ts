@@ -9,7 +9,7 @@ import { CreateUserReq } from '../models/dtos/create-user-req';
 })
 export class UserService {
 
-  private readonly userApi: string
+  private userApi: string
 
   constructor(private readonly httpClient: HttpClient) {
     this.userApi = new URL(`/api/user`, environment.apiUrl).href
