@@ -23,11 +23,11 @@ export class UserService {
     return this.httpClient.post(this.userApi + `/user-create`, req)
   }
 
-  updateUser(id: number) : Observable<any> {
+  updateUser(id: number): Observable<any> {
     return this.httpClient.put(this.userApi + `/user-update`, id)
   }
 
-  deleteUser(id: number) : Observable<any>{
+  deleteUser(id: number): Observable<any> {
     return this.httpClient.delete(this.userApi + `/${id}/user-delete`)
   }
 

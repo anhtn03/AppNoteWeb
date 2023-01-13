@@ -14,17 +14,17 @@ export class EventService {
 
   constructor(private readonly httpClient: HttpClient) {
     this.eventApi = new URL(`/api/event`, environment.apiUrl).href;
-   }
+  }
 
-   getEvent(req: GetEventReq) {
+  getEvent(req: GetEventReq) {
     return this.httpClient.post<GetEventReps>('https://625d4c7a95cd5855d61eafe1.mockapi.io/api/login/tuananh', req)
-   }
+  }
 
-   updateEvent(id: number) {
+  updateEvent(id: number) {
     return this.httpClient.put('https://625d4c7a95cd5855d61eafe1.mockapi.io/api/login/tuananh', id)
-   }
+  }
 
-   deleteEvent(id: number) {
-    return this.httpClient.delete(this.eventApi + `/${id}/event-delete`) 
-   }
+  deleteEvent(id: number) {
+    return this.httpClient.delete(this.eventApi + `/${id}/event-delete`)
+  }
 }
