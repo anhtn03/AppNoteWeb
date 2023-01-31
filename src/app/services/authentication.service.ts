@@ -41,10 +41,10 @@ export class AuthenticationService {
         this.cokkiService.put(AuthToken, reps.token, { expires: new Date(reps.expires) })
         this.JwtCurrentuser(reps.token);
         this.router.navigate(['home'])
-        this.notificationService.showInfo('info','Nói cho bạn nghe','Bạn đã đăng nhâp thành công')
+        this.notificationService.showInfo('info','Okie','Bạn đã đăng nhâp thành công')
       },
       error: (error) => {
-        this.notificationService.showError('error','Nói cho bạn nghe','Sai tên đăng nhập hoặc mật khẩu')
+        this.notificationService.showError('error','Okie','Sai tên đăng nhập hoặc mật khẩu')
         console.log(error)
       }
     })
