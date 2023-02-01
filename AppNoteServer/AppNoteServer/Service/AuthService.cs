@@ -1,4 +1,5 @@
 using AppNoteServer.Models;
+using System.Linq.Expressions;
 
 namespace AppNoteServer.Service
 {
@@ -25,7 +26,10 @@ namespace AppNoteServer.Service
 
     public async Task<string> QueryUserAsync(AuthReq authReq, CancellationToken cancellationToken = default)
     {
-      if (authReq.Username == null || authReq.Password == null) throw new ArgumentNullException("Username or Password invalid");
+      if (authReq.Username == null || authReq.Password == null)
+        throw new ArgumentNullException("Username or Password invalid");
+
+      Expression<Func<User, bool>> filters = user => authReq.Username == user.Username && authReq.Password == user.Password;
 
       return GenerateJwtToken(new User {
         Username = authReq.Username,

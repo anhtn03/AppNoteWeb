@@ -33,6 +33,7 @@ namespace AppNoteServer.Middleware
       {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:key"]));
+
         tokenHandler.ValidateToken(token, new TokenValidationParameters
         {
           ValidateIssuerSigningKey = true,
