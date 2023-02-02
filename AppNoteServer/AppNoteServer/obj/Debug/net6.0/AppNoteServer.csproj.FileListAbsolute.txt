@@ -1,0 +1,7 @@
+C:\WorkSpace\AppNoteWeb\AppNoteServer\AppNoteServer\obj\Debug\net6.0\AppNoteServer.csproj.AssemblyReference.cache
+C:\WorkSpace\AppNoteWeb\AppNoteServer\AppNoteServer\obj\Debug\net6.0\AppNoteServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkSpace\AppNoteWeb\AppNoteServer\AppNoteServer\obj\Debug\net6.0\AppNoteServer.AssemblyInfoInputs.cache
+C:\WorkSpace\AppNoteWeb\AppNoteServer\AppNoteServer\obj\Debug\net6.0\AppNoteServer.AssemblyInfo.cs
+C:\WorkSpace\AppNoteWeb\AppNoteServer\AppNoteServer\obj\Debug\net6.0\AppNoteServer.csproj.CoreCompileInputs.cache
+C:\WorkSpace\AppNoteWeb\AppNoteServer\AppNoteServer\obj\Debug\net6.0\AppNoteServer.MvcApplicationPartsAssemblyInfo.cs
+C:\WorkSpace\AppNoteWeb\AppNoteServer\AppNoteServer\obj\Debug\net6.0\AppNoteServer.MvcApplicationPartsAssemblyInfo.cache

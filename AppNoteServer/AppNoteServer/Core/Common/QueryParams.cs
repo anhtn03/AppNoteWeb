@@ -6,7 +6,7 @@ namespace AppNoteServer.Core.Common
   {
     public Expression<Func<TModel, bool>> Filters { get; set;}
 
-    public QueryParams(Expression<Func<TModel, bool>> filters)
+    public QueryParams(Expression<Func<TModel, bool>> filters, CancellationToken cancellationToken = default)
     {
       Filters = filters;
     }

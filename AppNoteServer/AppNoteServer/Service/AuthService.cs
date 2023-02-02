@@ -1,3 +1,5 @@
+using AppNoteServer.Core.Common;
+using AppNoteServer.Core.UserRepo.Repositories;
 using AppNoteServer.Models;
 using System.Linq.Expressions;
 
@@ -5,23 +7,13 @@ namespace AppNoteServer.Service
 {
   public class AuthService : IAuthService
   {
-    private readonly IConfiguration _config;
-    private readonly string _key;
-    private readonly string __issuer;
+    private readonly IJwtAuthService _jwtAuthService;
+    private readonly IUserRepository _userRepository;
 
-    private readonly IAuthService _authService;
-
-    public AuthService(IAuthService authService, IConfiguration config)
+    public AuthService(IUserRepository userRepository, IJwtAuthService jwtAuthService)
     {
-      _authService = authService ?? throw new ArgumentNullException(nameof(authService));
-      _config = config;
-      _key = _config["Jwt:Key"];
-      __issuer = _config["Jwt:Issuer"];
-    }
-
-    public string GenerateJwtToken(User user)
-    {
-      throw new NotImplementedException();
+      _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+      _jwtAuthService = jwtAuthService ?? throw new ArgumentNullException(nameof(jwtAuthService));
     }
 
     public async Task<string> QueryUserAsync(AuthReq authReq, CancellationToken cancellationToken = default)
@@ -31,15 +23,20 @@ namespace AppNoteServer.Service
 
       Expression<Func<User, bool>> filters = user => authReq.Username == user.Username && authReq.Password == user.Password;
 
-      return GenerateJwtToken(new User {
-        Username = authReq.Username,
-        Password = authReq.Password,
-      });
-    }
+      var query = _userRepository.GetUserAsync(new QueryParams<User>(filters), cancellationToken);
+      var currentUser = query.Result.Result.First();
 
-    public bool VerifyToken(string token)
-    {
-      throw new NotImplementedException();
+      if(query.Result.Result.Count == 0)
+      {
+        throw new UnauthorizedAccessException("Wrong user or password");
+      }
+     
+      return _jwtAuthService.GenerateJwtToken(new User {
+        Id = currentUser.Id,
+        Username = currentUser.Username,
+        Password = currentUser.Password,
+        Fullname = currentUser.Fullname
+      });
     }
   }
 }

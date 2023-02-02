@@ -2,11 +2,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace AppNoteServer.Core.Common
 {
-  public class QueryResults
+  public class QueryResults<TModel>
   {
-    public List<Model> Result { get; set; }
+    public List<TModel> Result { get; }
 
-    public QueryResults(List<Model> result)
+    public QueryResults(List<TModel> result)
     {
       Result = result;
     }
