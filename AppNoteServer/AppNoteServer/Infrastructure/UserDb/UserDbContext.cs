@@ -5,21 +5,16 @@ namespace AppNoteServer.Infrastructure.UserDb
 {
   public class UserDbContext : DbContext, IUnitOfWork
   {
-    protected readonly IConfiguration _Configuration;
+    public UserDbContext(string connectionString)
+            : base(GetOptions(connectionString)) { }
 
-    public UserDbContext(IConfiguration configuration)
+    private static DbContextOptions GetOptions(string connectionString)
     {
-      _Configuration = configuration;
-    }
-
-    protected void Onconfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-      var connectionString = _Configuration.GetConnectionString("connectionString");
-
       if (string.IsNullOrEmpty(connectionString))
         throw new ArgumentNullException(nameof(connectionString));
 
-      optionsBuilder.UseSqlite(connectionString);
+      return new DbContextOptionsBuilder()
+          .UseSqlite(connectionString).Options;
     }
 
     public DbSet<User> Users { get; set; }

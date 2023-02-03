@@ -1,27 +1,21 @@
-var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+using WebAppRPv5;
 
+namespace AppNoteServer
 {
-  var service = builder.Services;
-  service.AddCors();
-  service.AddControllers();
+  public class Program
+  {
+    public static void Main(string[] args)
+    {
+      CreateHostBuilder(args).Build().Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+              webBuilder.UseStartup<Startup>();
+            });
+  }
 }
 
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-  app.UseSwagger();
-  app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();

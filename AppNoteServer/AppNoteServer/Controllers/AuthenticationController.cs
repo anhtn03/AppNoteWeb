@@ -1,9 +1,13 @@
 using AppNoteServer.Models;
 using AppNoteServer.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppNoteServer.Controllers
 {
+  [AllowAnonymous]
+  [Route("api/authentication")]
+  [ApiController]
   public class AuthenticationController: ControllerBase
   {
     private readonly IAuthService _authService;

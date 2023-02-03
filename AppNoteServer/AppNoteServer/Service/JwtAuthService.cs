@@ -35,12 +35,7 @@ namespace AppNoteServer.Service
         SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
       };
 
-      var token = new JwtSecurityToken(
-        issuer: _issuer,
-        claims: claims,
-        expires: DateTime.UtcNow.AddDays(7),
-        signingCredentials: credential
-        );
+      var token = tokenHandle.CreateToken(tokenDescriptor);
 
       return tokenHandle.WriteToken(token);
     }
@@ -60,20 +55,18 @@ namespace AppNoteServer.Service
         tokenHandle.ValidateToken(token, new TokenValidationParameters
         {
           ValidateIssuerSigningKey = true,
-          IssuerSigningKey = new SymmetricSecurityKey(key),
-          ValidateIssuer = false,
+          IssuerSigningKey = key,
+          ValidateIssuer = true,
           ValidateAudience = false,
-          ClockSkew = TimeSpan.Zero,
+          ValidateLifetime = true,
+          ValidIssuer = _issuer
         }, out SecurityToken validatedToken);
-
-        var jwtToken = (JwtSecurityToken)validatedToken;
-        var userId = int.Parse(jwtToken.Claims.First(id => id.Type == "id").Value);
-          return userId;
       }
       catch
       {
         return false;
       }
+      return true;
     }
   }
 }
